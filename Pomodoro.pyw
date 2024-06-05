@@ -1,5 +1,4 @@
-# Prompt: crie um timer pomodoro com tempos ajustáveis em Python, e com uma interface gráfica bonita, capaz de rodar em Windows e Linux.
-# Adequação: will.i.am | github.com/williampilger
+# By: will.i.am | github.com/williampilger
 
 import time
 import tkinter as tk
@@ -10,6 +9,7 @@ class PomodoroTimer:
     def __init__(self, master):
         self.master = master
         self.master.title("Pomodoro Timer")
+        self.master.resizable(False, False)# desabilita redimensionamento
 
         # Configuração inicial dos tempos
         self.work_time = 25 * 60  # 25 minutos
