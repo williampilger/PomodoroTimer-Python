@@ -10,6 +10,7 @@ class PomodoroTimer:
         self.master = master
         self.master.title("Pomodoro Timer")
         self.master.resizable(False, False)# desabilita redimensionamento
+        self.fullVisible = True
 
         # Configuração inicial dos tempos
         self.work_time = 25 * 60  # 25 minutos
@@ -32,6 +33,7 @@ class PomodoroTimer:
 
         self.time_display = tk.Label(self.master, text="", font=("Helvetica", 48))
         self.time_display.pack(pady=10)
+        self.time_display.bind("<Button-1>", self.toggle_visibility)
 
         self.phase_display = tk.Label(self.master, text="Foco", font=("Helvetica", 14))
         self.phase_display.pack(pady=1)
@@ -155,6 +157,14 @@ class PomodoroTimer:
         ]
         my_melody = Musiquinha(melody)
         my_melody.play()
+
+    def toggle_visibility(self, event=None):
+        self.fullVisible = not self.fullVisible
+        # self.master.overrideredirect(not self.fullVisible)
+
+        for widget in self.master.winfo_children():
+            if widget != self.time_display:
+                widget.pack() if self.fullVisible else widget.pack_forget()
 
 
 import simpleaudio as sa
