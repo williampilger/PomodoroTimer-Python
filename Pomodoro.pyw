@@ -161,14 +161,14 @@ class PomodoroTimer:
     def toggle_visibility(self, event=None):
         self.fullVisible = not self.fullVisible
 
-        x = root.winfo_x()
-        y = root.winfo_y()
+        x = self.master.winfo_x()
+        y = self.master.winfo_y()
         if self.fullVisible:
             self.master.overrideredirect(False)
-            root.geometry(f"+{x-45}+{y-35}")
+            self.master.geometry(f"+{x-45}+{y-35}")
         else:
             self.master.overrideredirect(True)
-            root.geometry(f"+{x+45}+{y+35}")
+            self.master.geometry(f"+{x+45}+{y+35}")
 
         for widget in self.master.winfo_children():
             if widget != self.time_display:
