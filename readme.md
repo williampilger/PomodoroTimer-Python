@@ -4,8 +4,8 @@ Este projeto é um aplicativo simples de times Pomodoro para Windows e Linux.
 Pode ser executado diretamente via script, ou nas versões compiladas.
 
 Builds (Executável - SEM INSTALAÇÃO):
- - [Windows 11 - Latest](dist/Pomodoro_Windows11.exe);
- - [Linux - Ubuntu](dist/Pomodoro_Ubuntu);
+ - [Windows 11 - V1](dist/Pomodoro_Windows11_V1.exe);
+ - [Linux_Ubuntu - V2](dist/Pomodoro_Ubuntu_V2);
 
 [veja todas as versões aqui](./build);
 
@@ -14,8 +14,8 @@ Builds (Executável - SEM INSTALAÇÃO):
  - 1 - Tenha o Python instalado;
  - 2 - Salve o `Pomodoro.pyw` no seu PC
  - 3 - Instale os requisitos:
-   - **Linux**:  `sudo apt update && sudo apt install libasound2-dev && pip3 install tkinter simpleaudio`
-   - **Windows**: `pip install tkinter simpleaudio`
+   - **Linux**:  `sudo apt update && sudo apt install libasound2-dev && pip3 install numpy tkinter simpleaudio`
+   - **Windows**: `pip install numpy tkinter simpleaudio`
  - 4 - Execute a aplicação, com dois cliques ou via linha de comando: `python Pomodoro.pyw`
 
 
@@ -28,7 +28,9 @@ Para o correto funcionamento:
 ```sh
 sudo apt update
 sudo apt install libasound2-dev
-pip3 install tkinter simpleaudio
+# python3 -m venv .env
+# .env/bin/activate
+pip3 install numpy tkinter simpleaudio
 ```
 
 Para executar agora:
@@ -54,6 +56,18 @@ Se tiver problemas, abra o terminal, navegue até o diretório, e execute o app 
 ```ps1
 python Pomodoro.pyw
 ```
+
+
+
+### Compilando
+
+Instale o Py-Installer
+> pip3 install pyinstaller
+
+> pyinstaller --onefile Pomodoro.pyw
+
+
+
 
 ## Sobre
 

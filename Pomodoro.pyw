@@ -57,7 +57,7 @@ class PomodoroTimer:
         self.settings_button = ttk.Button(self.button_frame, text="Ajustes", command=self.open_settings, style='TButton')
         self.settings_button.grid(row=1, column=1, pady=5, padx=5)
 
-        self.ny_label = tk.Label(self.master, text="By: William Pilger", font=("Helvetica", 8))
+        self.ny_label = tk.Label(self.master, text="By: William Pilger | V2", font=("Helvetica", 8))
         self.ny_label.pack(pady=1)
 
     def start_timer(self):
