@@ -4,7 +4,7 @@ Este projeto é um aplicativo simples de times Pomodoro para Windows e Linux.
 Pode ser executado diretamente via script, ou nas versões compiladas.
 
 Builds (Executável - SEM INSTALAÇÃO):
- - [Windows 11 - V2](dist/Pomodoro_Windows11_V2.exe);
+ - [Windows 11 - V3](dist/Pomodoro_Windows11_V3.exe);
  - [Linux_Ubuntu - V1](dist/Pomodoro_Ubuntu_V1);
 
 [veja todas as versões aqui](./build);

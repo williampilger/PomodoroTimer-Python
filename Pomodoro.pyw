@@ -32,7 +32,7 @@ class PomodoroTimer:
         self.timer_label.pack(pady=1)
 
         self.time_display = tk.Label(self.master, text="", font=("Helvetica", 48))
-        self.time_display.pack(pady=10)
+        self.time_display.pack(pady=0)
         self.time_display.bind("<Button-1>", self.toggle_visibility)
 
         self.phase_display = tk.Label(self.master, text="Foco", font=("Helvetica", 14))
@@ -57,7 +57,7 @@ class PomodoroTimer:
         self.settings_button = ttk.Button(self.button_frame, text="Ajustes", command=self.open_settings, style='TButton')
         self.settings_button.grid(row=1, column=1, pady=5, padx=5)
 
-        self.ny_label = tk.Label(self.master, text="By: William Pilger | V2", font=("Helvetica", 8))
+        self.ny_label = tk.Label(self.master, text="By: William Pilger | V3", font=("Helvetica", 8))
         self.ny_label.pack(pady=1)
 
     def start_timer(self):
@@ -161,18 +161,26 @@ class PomodoroTimer:
     def toggle_visibility(self, event=None):
         self.fullVisible = not self.fullVisible
 
-        x = self.master.winfo_x()
-        y = self.master.winfo_y()
+        #x = self.master.winfo_x()
+        #y = self.master.winfo_y()
         if self.fullVisible:
             self.master.overrideredirect(False)
-            self.master.geometry(f"+{x-45}+{y-35}")
+            #self.master.geometry(f"+{x-45}+{y-35}")
+            self.master.attributes('-alpha', 1)
+            self.timer_label.pack()
+            self.button_frame.pack()
+            self.ny_label.pack()
         else:
             self.master.overrideredirect(True)
-            self.master.geometry(f"+{x+45}+{y+35}")
+            #self.master.geometry(f"+{x+45}+{y+35}")
+            self.master.attributes('-alpha', 0.4)
+            self.timer_label.pack_forget()
+            self.button_frame.pack_forget()
+            self.ny_label.pack_forget()
 
-        for widget in self.master.winfo_children():
-            if widget != self.time_display:
-                widget.pack() if self.fullVisible else widget.pack_forget()
+        # for widget in self.master.winfo_children():
+        #     if widget != self.time_display:
+        #         widget.pack() if self.fullVisible else widget.pack_forget()
 
 
 import simpleaudio as sa
