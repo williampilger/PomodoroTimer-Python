@@ -4,8 +4,8 @@ Este projeto é um aplicativo simples de times Pomodoro para Windows e Linux.
 Pode ser executado diretamente via script, ou nas versões compiladas.
 
 Builds (Executável - SEM INSTALAÇÃO):
- - [Windows 11 - V1](dist/Pomodoro_Windows11_V1.exe);
- - [Linux_Ubuntu - V2](dist/Pomodoro_Ubuntu_V2);
+ - [Windows 11 - V2](dist/Pomodoro_Windows11_V2.exe);
+ - [Linux_Ubuntu - V1](dist/Pomodoro_Ubuntu_V1);
 
 [veja todas as versões aqui](./build);
 
@@ -41,14 +41,28 @@ Para executar agora:
 
 ### Instalação detalhada - Windows
 
+
+#### Preparando o Ambiente
+
 Instale o Python pelo [site oficial](https://python.org);
+
+Caso não tenha o `Microsoft C++ Build Tools` instalado:
+
+```ps1
+winget install --id Microsoft.VisualStudio.2022.BuildTools --source winget
+```
+
+
+#### Instalando as Bibliotecas
 
 Instale as bibliotecas necessárias:
 
 ```ps1
-pip install tkinter simpleaudio
+pip install numpy tkinter simpleaudio
 ```
 
+
+#### Executando
 Se tudo estiver correto, você poderá abrir o app dando dois cliques.
 
 Se tiver problemas, abra o terminal, navegue até o diretório, e execute o app pelo terminal, podendo assim ver os erros no terminal:
