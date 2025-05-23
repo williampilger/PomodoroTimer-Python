@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## Execute diretamente usando:
+## bash -c "$(curl -fsSL https://raw.githubusercontent.com/williampilger/PomodoroTimer-Python/main/install.sh)"
+
 # Download do aplicativo
 wget -O ~/pomodoro 'https://github.com/williampilger/PomodoroTimer-Python/raw/refs/heads/main/dist/Pomodoro_Ubuntu_V2'
 chmod +x ~/pomodoro
